@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::apiResource('role','App\Http\Controllers\RoleController');
+Route::get('searchRole',[RoleController::class, 'searchRole']);
+Route::apiResource('category','App\Http\Controllers\CategoryController');
+Route::get('searchCategory',[CategoryController::class, 'searchCategory']);
+Route::apiResource('user','App\Http\Controllers\UserController');
+Route::get('searchUser',[UserController::class, 'searchUserByName']);

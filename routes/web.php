@@ -19,3 +19,11 @@ Route::get('/', [
     dashboardController::class,
     'main'
 ]);
+Route::post('postTest', [
+    dashboardController::class,
+    'test'
+]);
+Route::get('RegisterAndLogin', [
+    dashboardController::class,
+    'registerAndLogin'
+]);
